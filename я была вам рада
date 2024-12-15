@@ -1,0 +1,124 @@
+1)b
+2)c
+3)b
+4)b
+5)b
+
+
+
+<!-- Сайт с багами -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buggy Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:disabled {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Buggy Site</h1>
+        <p>Введите два числа, чтобы получить их сумму:</p>
+        <input type="number" id="number1" placeholder="Первое число">
+        <input type="number" id="number2" placeholder="Второе число">
+        <button id="calculateButton" class="button">Посчитать</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+            const number1 = document.getElementById("number1").value;
+            const number2 = document.getElementById("number2").value;
+            
+            // Логическая ошибка: числа преобразуются после сложения
+            const result = parseInt(number1 + number2);
+            document.getElementById("result").textContent = `Результат: ${result}`;
+        });
+    </script>
+</body>
+</html>
+
+<!-- Супер простой сайт для детей -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой сайт для детей</title>
+    <style>
+        body {
+            font-family: Comic Sans MS, sans-serif;
+            text-align: center;
+            background-color: #ffefd5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #32cd32;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #228b22;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Добро пожаловать на пытку!</h1>
+    </div>
+    <div class="content">
+        <p>Нажми на кнопку, чтобы узнать интересный факт:</p>
+        <button onclick="showFact()">Узнать факт</button>
+        <p id="fact" style="font-size: 20px; color: #ff4500;"></p>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Слон может весить до 7 тонн!",
+                "Осьминоги имеют три сердца!",
+                "Бабочки пробуют еду лапками!"
+                "у китов есть пупки!"
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").textContent = randomFact;
+        }
+    </script>
+</body>
+</html>
